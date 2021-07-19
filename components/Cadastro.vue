@@ -34,7 +34,7 @@
               id="input-3"
             />
           </b-col>
-          <b-col>
+          <b-col cols="2">
             <label for="input-13">DDD:</label>
             <b-form-input
               placeholder="(00)"
@@ -50,7 +50,7 @@
               v-model="form.phone"
               required
               maxlength="10"
-              id="input-13"
+              id="input-14"
           /></b-col>
         </b-form-row>
       </b-form-group>
