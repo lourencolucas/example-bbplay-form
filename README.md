@@ -19,7 +19,5 @@ $ npm run generate
 ```
 # Telas
 
-## Formulário sem estilo definido:
-![1](https://res.cloudinary.com/lourencolucas/image/upload/v1626537020/BB-PLAY/unknown_nabvm6.png)
-## JSON para envio a API:
-![2](https://res.cloudinary.com/lourencolucas/image/upload/v1626537020/BB-PLAY/unknown2_nbfxbx.png)
+## Formulário com estilo definido:
+![1](https://res.cloudinary.com/lourencolucas/image/upload/v1626722317/BB-PLAY/FireShot_Capture_033_-_Box_Brasil_Play_-_localhost_pwnu05.png)
