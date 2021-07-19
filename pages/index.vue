@@ -3,7 +3,11 @@
     <b-container class="bv-example-row vh-10">
       <b-row class="text-center">
         <b-col cols="12">
-          <b-img src="~/static/boxbrazil-logo.png" fluid alt="Responsive image"></b-img>
+          <b-img
+            src="https://res.cloudinary.com/lourencolucas/image/upload/v1626720232/BB-PLAY/boxbrazil-logo_nyjito.png"
+            fluid
+            alt="Responsive image"
+          ></b-img>
           <h1 class="m-3">BEM-VINDO À BOX BRAZIL PLAY!</h1>
         </b-col>
       </b-row>
@@ -36,7 +40,9 @@
         </b-col>
       </b-row>
       <b-row class="text-center">
-        <b-col cols="12"> <h2 class="m-3">CADASTRE-SE GRATUITAMENTE</h2> </b-col>
+        <b-col cols="12">
+          <h2 class="m-3">CADASTRE-SE GRATUITAMENTE</h2>
+        </b-col>
       </b-row>
       <Cadastro />
     </b-container>
@@ -49,7 +55,7 @@ export default {};
 
 <style>
 body {
-  background-image: url("/bg-form-bbplay.jpg");
+  background-image: url("https://res.cloudinary.com/lourencolucas/image/upload/v1626720232/BB-PLAY/bg-form-bbplay_vsvvg8.jpg");
   /* margin: none; */
 }
 
