@@ -3,88 +3,138 @@
     <b-form @submit="onSubmit" @reset="onReset" v-if="show">
       <b-form-group>
         <b-form-row>
-          <b-col cols="6"
-            ><b-form-input placeholder="Nome" v-model="form.name" required
-          /></b-col>
-          <b-col
-            ><b-form-input
-              placeholder="CPF"
+          <b-col cols="6">
+            <label for="input-1">Nome completo:</label>
+            <b-form-input
+              id="input-1"
+              placeholder="José da Silva"
+              v-model="form.name"
+              required
+            />
+          </b-col>
+          <b-col>
+            <label for="input-2">CPF:</label>
+            <b-form-input
+              placeholder="000.000.000-00"
               v-model="form.cpf"
               required
-              maxlength="11"
+              maxlength="14"
+              id="input-2"
           /></b-col>
-          <b-col
-            ><b-form-input
-              placeholder="Data de Nascimento"
+          <b-col>
+            <label for="input-3">Data de Nascimento:</label>
+            <b-form-input
               type="date"
               v-model="form.birthdate"
               required
-          /></b-col>
-        </b-form-row>
-      </b-form-group>
-      <b-form-group>
-        <b-form-row>
-          <b-col
-            ><b-form-input placeholder="CEP" v-model="form.cep" required
-          /></b-col>
-          <b-col cols="10"
-            ><b-form-input
-              placeholder="Endereço"
-              v-model="form.address"
-              required
-          /></b-col>
-        </b-form-row>
-      </b-form-group>
-      <b-form-group>
-        <b-form-row>
-          <b-col cols="6"
-            ><b-form-input placeholder="Complemento" v-model="form.address2"
-          /></b-col>
-          <b-col
-            ><b-form-input placeholder="Cidade" v-model="form.city" required
-          /></b-col>
-          <b-col
-            ><b-form-input placeholder="Estado" v-model="form.state" required
+              id="input-3"
           /></b-col>
         </b-form-row>
       </b-form-group>
       <b-form-group>
         <b-form-row>
           <b-col>
+            <label for="input-4">CEP:</label>
             <b-form-input
-              placeholder="Email"
+              placeholder="00000-000"
+              v-model="form.cep"
+              required
+              id="input-4"
+          /></b-col>
+          <b-col cols="9">
+            <label for="input-5">Endereço:</label>
+            <b-form-input
+              placeholder="R. José do Carmo Oliveira, 170"
+              v-model="form.address"
+              required
+              id="input-5"
+          /></b-col>
+        </b-form-row>
+      </b-form-group>
+      <b-form-group>
+        <b-form-row>
+          <b-col cols="6">
+            <label for="input-6">Complemento:</label>
+            <b-form-input
+              placeholder="Apt 02"
+              v-model="form.address2"
+              id="input-6"
+          /></b-col>
+          <b-col>
+            <label for="input-7">Cidade:</label>
+            <b-form-input
+              placeholder="Belo Horizonte"
+              v-model="form.city"
+              required
+              id="input-7"
+          /></b-col>
+          <b-col>
+            <label for="input-8">Estado:</label>
+            <b-form-input
+              placeholder="Minas Gerais"
+              v-model="form.state"
+              required
+              id="input-8"
+          /></b-col>
+        </b-form-row>
+      </b-form-group>
+      <b-form-group>
+        <b-form-row>
+          <b-col>
+            <label for="input-9">Email:</label>
+            <b-form-input
+              placeholder="jose@meuemail.com"
               type="email"
               required
               v-model="form.email"
+              id="input-9"
             />
           </b-col>
           <b-col>
+            <label for="input-10">Confirmar Email:</label>
             <b-form-input
-              placeholder="Confirmar Email"
+              placeholder="jose@meuemail.com"
               type="email"
               required
               v-model="form.emailcheck"
+              id="input-10"
+              :state="validation"
             />
+            <b-form-invalid-feedback :state="validation">
+              Os emails digitados precisam ser iguais.
+            </b-form-invalid-feedback>
+            <!-- <b-form-valid-feedback :state="validation">
+              Os emails conferem.
+            </b-form-valid-feedback> -->
           </b-col>
         </b-form-row>
       </b-form-group>
       <b-form-group>
         <b-form-row>
           <b-col>
+            <label for="input-11">Senha:</label>
             <b-form-input
-              placeholder="Senha"
               type="password"
               required
               v-model="form.password"
+              id="input-11"
             />
           </b-col>
           <b-col>
+            <label for="input-12">Confirmar Senha:</label>
             <b-form-input
-              placeholder="Confirmar Senha"
               type="password"
               required
               v-model="form.passwordcheck"
+              id="input-12"
+              :state="validationPassword"
             />
+            <b-form-invalid-feedback :state="validationPassword">
+              As senhas precisam ser iguais e conter 8 ou mais caracteres.
+            </b-form-invalid-feedback>
+            <!-- <b-form-valid-feedback :state="validationPassword">
+              As senhas conferem.
+            </b-form-valid-feedback> -->
           </b-col>
         </b-form-row>
       </b-form-group>
@@ -100,14 +150,14 @@
             <a href="https://boxbrazilplay.tv.br/privacidade.html"
               >Politica de Privacidade</a
             >
-            e os Termos de Uso.</b-form-checkbox
+            e os Termos de uso.</b-form-checkbox
           >
         </b-form-checkbox-group>
       </b-form-group>
       <b-button type="submit" variant="primary">Cadastrar</b-button>
       <b-button type="reset" variant="warning">Limpar</b-button>
     </b-form>
-    <b-card class="mt-3" header="Form Data Result">
+    <b-card class="m-3" header="Form Data Result">
       <pre class="m-0">{{ form }}</pre>
     </b-card>
   </div>
@@ -138,7 +188,17 @@ export default {
   methods: {
     onSubmit(event) {
       event.preventDefault();
-      alert(JSON.stringify(this.form));
+      // if (this.form.password != this.form.passwordcheck) {
+      //   alert("Senhas não conferem!");
+      // }
+      if (
+        this.form.email != this.form.emailcheck ||
+        this.form.password != this.form.passwordcheck
+      ) {
+        alert("Email ou senha não conferem!");
+      } else {
+        alert(JSON.stringify(this.form));
+      }
     },
     onReset(event) {
       event.preventDefault();
@@ -163,11 +223,24 @@ export default {
       });
     },
   },
+  computed: {
+    validation() {
+      return this.form.email == this.form.emailcheck && this.form.email.length > 0;
+    },
+    validationPassword() {
+      return (
+        this.form.password === this.form.passwordcheck && this.form.password.length >= 8
+      );
+    },
+  },
 };
 </script>
 
 <style>
 .letter {
+  color: var(--light);
+}
+label {
   color: var(--light);
 }
 </style>
