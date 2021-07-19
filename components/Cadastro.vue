@@ -103,9 +103,6 @@
             <b-form-invalid-feedback :state="validation">
               Os emails precisam ser iguais.
             </b-form-invalid-feedback>
-            <!-- <b-form-valid-feedback :state="validation">
-              Os emails conferem.
-            </b-form-valid-feedback> -->
           </b-col>
         </b-form-row>
       </b-form-group>
@@ -115,6 +112,7 @@
             <label for="input-11">Senha:</label>
             <b-form-input
               type="password"
+              placeholder="********"
               required
               v-model="form.password"
               id="input-11"
@@ -124,6 +122,7 @@
             <label for="input-12">Confirmar Senha:</label>
             <b-form-input
               type="password"
+              placeholder="********"
               required
               v-model="form.passwordcheck"
               id="input-12"
@@ -132,9 +131,6 @@
             <b-form-invalid-feedback :state="validationPassword">
               As senhas precisam ser iguais e conter 8 ou mais caracteres.
             </b-form-invalid-feedback>
-            <!-- <b-form-valid-feedback :state="validationPassword">
-              As senhas conferem.
-            </b-form-valid-feedback> -->
           </b-col>
         </b-form-row>
       </b-form-group>
