@@ -3,12 +3,12 @@
     <b-container class="bv-example-row vh-10">
       <b-row class="text-center">
         <b-col cols="12">
-          <b-img src="~/static/boxbrazil-logo.png" style="max-width: 400px"></b-img>
-          <h1>BEM-VINDO À BOX BRAZIL PLAY!</h1>
+          <b-img src="~/static/boxbrazil-logo.png" fluid alt="Responsive image"></b-img>
+          <h1 class="m-3">BEM-VINDO À BOX BRAZIL PLAY!</h1>
         </b-col>
       </b-row>
       <b-row class="text-center info-b">
-        <b-col cols="12">
+        <b-col cols="12" class="m-3">
           Cadastre-se abaixo e tenha acesso aos catálogos disponíveis para
           assinatura.
           <br />
@@ -22,7 +22,7 @@
           após conclusão do cadastro, escolha seu plano.
         </b-col>
       </b-row>
-      <b-row class="text-center info-b">
+      <b-row class="text-center info-b m-3">
         <b-col cols="12">
           Ficou com alguma dúvida?
           <br />
@@ -36,10 +36,9 @@
         </b-col>
       </b-row>
       <b-row class="text-center">
-        <b-col cols="12"> <h1>CADASTRE-SE GRATUITAMENTE</h1> </b-col>
+        <b-col cols="12"> <h2 class="m-3">CADASTRE-SE GRATUITAMENTE</h2> </b-col>
       </b-row>
       <Cadastro />
-      <!-- <Data/> -->
     </b-container>
   </body>
 </template>
@@ -51,7 +50,7 @@ export default {};
 <style>
 body {
   background-image: url("/bg-form-bbplay.jpg");
-  margin: none;
+  /* margin: none; */
 }
 
 .info-b {
@@ -59,6 +58,10 @@ body {
 }
 
 h1 {
+  color: var(--light);
+}
+
+h2 {
   color: var(--light);
 }
 </style>
