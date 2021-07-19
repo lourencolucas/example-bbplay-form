@@ -101,7 +101,7 @@
               :state="validation"
             />
             <b-form-invalid-feedback :state="validation">
-              Os emails digitados precisam ser iguais.
+              Os emails precisam ser iguais.
             </b-form-invalid-feedback>
             <!-- <b-form-valid-feedback :state="validation">
               Os emails conferem.
