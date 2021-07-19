@@ -21,13 +21,36 @@
               maxlength="14"
               id="input-2"
           /></b-col>
-          <b-col>
+        </b-form-row>
+      </b-form-group>
+      <b-form-group>
+        <b-form-row>
+          <b-col cols="6">
             <label for="input-3">Data de Nascimento:</label>
             <b-form-input
               type="date"
               v-model="form.birthdate"
               required
               id="input-3"
+            />
+          </b-col>
+          <b-col>
+            <label for="input-13">DDD:</label>
+            <b-form-input
+              placeholder="(00)"
+              v-model="form.ddd"
+              required
+              maxlength="2"
+              id="input-13"
+          /></b-col>
+          <b-col>
+            <label for="input-14">Telefone:</label>
+            <b-form-input
+              placeholder="00000-0000"
+              v-model="form.phone"
+              required
+              maxlength="10"
+              id="input-13"
           /></b-col>
         </b-form-row>
       </b-form-group>
@@ -171,6 +194,8 @@ export default {
         name: "",
         cpf: "",
         birthdate: "",
+        ddd: "",
+        phone: "",
         cep: "",
         address: "",
         address2: "",
@@ -206,6 +231,8 @@ export default {
       this.form.name = "";
       this.form.cpf = "";
       this.form.birthdate = "";
+      this.form.ddd = "";
+      this.form.phone = "";
       this.form.cep = "";
       this.form.address = "";
       this.form.address2 = "";
@@ -221,11 +248,14 @@ export default {
   },
   computed: {
     validation() {
-      return this.form.email == this.form.emailcheck && this.form.email.length > 0;
+      return (
+        this.form.email == this.form.emailcheck && this.form.email.length > 0
+      );
     },
     validationPassword() {
       return (
-        this.form.password === this.form.passwordcheck && this.form.password.length >= 8
+        this.form.password === this.form.passwordcheck &&
+        this.form.password.length >= 8
       );
     },
   },
