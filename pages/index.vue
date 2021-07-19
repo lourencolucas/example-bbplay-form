@@ -12,17 +12,19 @@
         </b-col>
       </b-row>
       <b-row class="text-center info-b">
-        <b-col cols="12" class="m-3">
+        <b-col cols="12" class="m-1">
           Cadastre-se abaixo e tenha acesso aos catálogos disponíveis para
           assinatura.
-          <br />
-          Ah, não se preocupe. Este cadastro é gratuito!
         </b-col>
       </b-row>
       <b-row class="text-center info-b">
         <b-col cols="12">
-          Para conhecer um pouco mais sobre a diversidade da produção
-          nacional,<br />
+          Ah, não se preocupe. Este cadastro é gratuito!
+        </b-col>
+      </b-row>
+      <b-row class="text-center info-b">
+        <b-col cols="12 m-1">
+          Para conhecer um pouco mais sobre a diversidade da produção nacional,
           após conclusão do cadastro, escolha seu plano.
         </b-col>
       </b-row>
@@ -41,7 +43,7 @@
       </b-row>
       <b-row class="text-center">
         <b-col cols="12">
-          <h2 class="m-3">CADASTRE-SE GRATUITAMENTE</h2>
+          <h2 class="m-5">CADASTRE-SE GRATUITAMENTE</h2>
         </b-col>
       </b-row>
       <Cadastro />
