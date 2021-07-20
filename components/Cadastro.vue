@@ -68,7 +68,7 @@
               required
               id="input-4"
               v-mask="'#####-###'"
-              @keyup="fetchSomething()"
+              @keyup="fetchCep()"
           /></b-col>
           <b-col cols="9">
             <label for="input-5">Endereço:</label>
@@ -248,7 +248,7 @@ export default {
         this.show = true;
       });
     },
-    async fetchSomething() {
+    async fetchCep() {
       if (this.form.cep.length == 9) {
         const ip = await this.$axios.$get(
           "https://brasilapi.com.br/api/cep/v2/" + this.form.cep
