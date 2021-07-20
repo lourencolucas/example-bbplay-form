@@ -20,6 +20,7 @@
               required
               maxlength="14"
               id="input-2"
+              v-mask="'###.###.###-##'"
           /></b-col>
         </b-form-row>
       </b-form-group>
@@ -28,16 +29,18 @@
           <b-col cols="6">
             <label for="input-3">Data de Nascimento:</label>
             <b-form-input
-              type="date"
+              type="text"
               v-model="form.birthdate"
               required
               id="input-3"
+              v-mask="'##-##-####'"
+              placeholder="01-01-2000"
             />
           </b-col>
           <b-col cols="2">
             <label for="input-13">DDD:</label>
             <b-form-input
-              placeholder="(00)"
+              placeholder="00"
               v-model="form.ddd"
               required
               maxlength="2"
@@ -51,6 +54,7 @@
               required
               maxlength="10"
               id="input-14"
+              v-mask="'#####-####'"
           /></b-col>
         </b-form-row>
       </b-form-group>
@@ -63,6 +67,8 @@
               v-model="form.cep"
               required
               id="input-4"
+              v-mask="'#####-###'"
+              @keyup="fetchSomething()"
           /></b-col>
           <b-col cols="9">
             <label for="input-5">Endereço:</label>
@@ -86,7 +92,7 @@
           <b-col>
             <label for="input-7">Cidade:</label>
             <b-form-input
-              placeholder="Belo Horizonte"
+              placeholder="Porto Alegre"
               v-model="form.city"
               required
               id="input-7"
@@ -94,7 +100,7 @@
           <b-col>
             <label for="input-8">Estado:</label>
             <b-form-input
-              placeholder="Minas Gerais"
+              placeholder="Rio Grande do Sul"
               v-model="form.state"
               required
               id="input-8"
@@ -209,9 +215,6 @@ export default {
   methods: {
     onSubmit(event) {
       event.preventDefault();
-      // if (this.form.password != this.form.passwordcheck) {
-      //   alert("Senhas não conferem!");
-      // }
       if (
         this.form.email != this.form.emailcheck ||
         this.form.password != this.form.passwordcheck
@@ -244,6 +247,16 @@ export default {
       this.$nextTick(() => {
         this.show = true;
       });
+    },
+    async fetchSomething() {
+      if (this.form.cep.length == 9) {
+        const ip = await this.$axios.$get(
+          "https://brasilapi.com.br/api/cep/v2/" + this.form.cep
+        );
+        this.form.address = ip.street + " - " + ip.neighborhood;
+        this.form.state = ip.state;
+        this.form.city = ip.city;
+      }
     },
   },
   computed: {
