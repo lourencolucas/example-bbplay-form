@@ -46,8 +46,12 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {},
 
+  //Router
+  router: {
+    base: '/bbplay-form/'
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    publicPath: ''
   }
 }
